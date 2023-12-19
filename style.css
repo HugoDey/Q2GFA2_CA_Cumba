@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 6dvh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2dvh;
+    padding-bottom: 2dvh;
+    background: #1d1d1da1;
+    color: white;
+    position: fixed;
+    width: 100%;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 1.1rem;
+    z-index: 98;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding-top: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+section#banner {
+    position: relative;
+    z-index: 80;
+    padding: 0;
+    background: linear-gradient(117deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 68%, rgb(0, 0, 0) 100%);
+}
+
+section#banner h1 {
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    z-index: 99;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 5px 5px black;
+    color: white;
+}
+
+/** heavenly bodies **/
+
+.bodies {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 90;
+}
+
+#Planet1 {
+    background-image: url(media/Planet1.gif);
+    width: 300px;
+    height: 300px;
+    animation: planet1motion 180s linear infinite;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+#Planet2 {
+    background-image: url(media/Planet2.gif);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation: planet2motion 20s linear infinite;
+    left: 30%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+
+#BlackHole {
+    background-image: url(media/Blackhole.gif);
+    width: 200px;
+    height: 200px;
+    animation: blackholegrow 600s;
+    left: 70%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#Galaxy {
+    background-image: url(media/Galaxy.gif);
+    width: 200px;
+    height: 200px;
+    animation: galaxygrow 600s;
+    left: 80%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes planet1motion {
+    0% { transform: translate(-200px, -300px); }
+    100% { transform: translate(200px, 300px); }
+}
+
+@keyframes planet2motion {
+    0% { transform: translate(-400px, -400px); }
+    100% { transform: translate(400px, 400px); }
+}
+
+@keyframes blackholegrow {
+    0% { transform: scale(2); }
+    100% { transform: scale(20); }
+}
+
+@keyframes galaxygrow {
+    0% { transform: scale(2); }
+    100% { transform: scale(20); }
+}
